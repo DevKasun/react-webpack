@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
 //import cbr from './../public/assets/img/cbr.jpg';
+import Cover from './components/Cover';
 import About from './pages/About';
 
 class App extends Component {
@@ -12,7 +13,9 @@ class App extends Component {
                     <Header />
                     <Route exact path="/" render={ props => (
                         <React.Fragment>
-                            <h1>My Webpack React App</h1>
+                            <main>
+                                <Cover />
+                            </main>
                         </React.Fragment>
                     ) } />
                     <Route path="/about" component={About} />
