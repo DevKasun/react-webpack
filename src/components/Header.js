@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 class Header extends Component {
     render() {
@@ -7,8 +7,8 @@ class Header extends Component {
             <header style={ headerStyle }>
                 <nav>
                     <ul>
-                        <li style={ liStyle }><Link to="/">Home</Link></li>
-                        <li style={ liStyle }><Link to="/about">About</Link></li>
+                        <li style={ liStyle }><NavLink to="/"><strong>Home</strong></NavLink></li>
+                        <li style={ liStyle }><NavLink to="/about"><strong>About me</strong></NavLink></li>
                     </ul>
                 </nav>
             </header>
@@ -20,10 +20,9 @@ const headerStyle = {
     textAlign: 'right',
     backgroundColor: '#3d3d3d',
     //color: '#fff',
-    margin: '0 15px',
-    marginTop: '15px',
     padding: '0 15px',
     borderRadius: '30px 30px 30px 30px',
+    border: '1px solid #E91E63'
 }
 
 const liStyle = {

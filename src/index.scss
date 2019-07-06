@@ -9,7 +9,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: #2b2b2b;
-    color: #f1f1f1;
+    color: #ffffff;
 }
 
 code {
@@ -18,18 +18,26 @@ code {
 
 h1,h2,h3,h4,h5,h6 { margin: 0; line-height: 1; }
 p { margin: 0; line-height: 1.6; }
-a { text-decoration: none; outline: none; color: #f1f1f1; }
+a { text-decoration: none; outline: none; color: #f1f1f1; transition: all 450ms ease; &:hover { color:#ec407a; } }
 ul { list-style: none; padding: 0; margin: 0; }
 img { max-width: 100%; }
 
+a.active {
+    color:#ec407a;
+}
+
 main {
-    margin: 0 15px;
+    padding: 15px 15px;
 }
 
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 0 30px;
+    height: inherit;
+    @media(max-width: 1280px) {
+        max-width: 992px;
+    }
 }
 
 // Cover Section
@@ -39,22 +47,131 @@ main {
     background-image: url('../public/assets/img/cover.jpg');
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    height: 85vh;
     margin-top: 15px;
     border-radius: 25px;
     overflow: hidden;
-    .background-layor {
+    border: 1px solid #E91E63;
+
+    .background-layer {
         height: 100%;
         background: rgba(61, 61, 61, 0.7);
-        // .profile-grid {
-        //     display: grid;
-        //     grid-template-columns: 1fr 1fr;
-        //     align-items: center;
-        //     img {
-        //         width: 300px;
-        //         border-radius: 50%;
-        //         filter: grayscale(100%);
-        //     }
+        // .container {
+        //     height: inherit;
         // }
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 40% auto;
+            align-items: center;
+            height: inherit;
+            h1 {
+                font-size: 120px;
+                span {
+                    display: block;
+                    line-height: 1;
+                    transition: all 650ms ease;
+                }
+            }
+            h3 {
+                font-size: 34px;
+                padding-bottom: 15px;
+            }
+            p {
+                font-size: 17px;
+            }
+            .cover-social-icons {
+                span {
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    background-size: 30px;
+                    margin: 15px;
+                    &.fb {
+                        background-image: url('./../public/assets/icons/fb-512.png');
+                    }
+                    &.tw {
+                        background-image: url('./../public/assets/icons/twitter-512.png');
+                    }
+                    &.insta {
+                        background-image: url('./../public/assets/icons/insta-512.png');
+                    }
+                    &.github {
+                        background-image: url('./../public/assets/icons/github-512.png');
+                    }
+                    &.linkedin {
+                        background-image: url('./../public/assets/icons/linkedin-512.png');
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Sections
+
+.background-layer {
+    height: 100%;
+    background: rgba(61, 61, 61, 0.7);
+    &.darker {
+        background: rgba(61, 61, 61, 0.9);
+    }
+}
+
+section {
+    position: relative;
+    height: 90vh;
+    margin-top: 15px;
+    background-color: rgb(61, 61, 61);
+    border-radius: 30px;
+    border: 1px solid rgb(233, 30, 99);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    &.whatwedo {
+        background-image: url('../public/assets/img/development.jpg');
+    }
+    &.technology {
+        background-image: url('../public/assets/img/tech.jpg');
+    }
+    &.about {
+        height: 85vh;
+        background-image: url('../public/assets/img/developer.jpg');
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 40% auto;
+        align-items: center;
+        height: inherit;
+        &.about {
+            grid-template-columns: 30% auto;
+            grid-gap: 40px;
+        }
+        h1 {
+            font-size: 120px;
+            span {
+                display: block;
+                line-height: 1;
+                transition: all 650ms ease;
+            }
+        }
+        h3 {
+            font-size: 34px;
+            padding-bottom: 15px;
+        }
+        ul {
+            list-style-type: disc;
+            list-style-position: inside;
+            li {
+                font-size: 18px;
+                padding-bottom: 5px;
+            }
+        }
+        img {
+            &.profile {
+                border-radius: 50%;
+            }
+        }
     }
 }
