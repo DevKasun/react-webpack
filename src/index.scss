@@ -17,7 +17,7 @@ code {
 }
 
 h1,h2,h3,h4,h5,h6 { margin: 0; line-height: 1; }
-p { margin: 0; line-height: 1.6; }
+p { margin: 0; line-height: 1.5; }
 a { text-decoration: none; outline: none; color: #f1f1f1; transition: all 450ms ease; &:hover { color:#ec407a; } }
 ul { list-style: none; padding: 0; margin: 0; }
 img { max-width: 100%; }
@@ -53,6 +53,13 @@ main {
     overflow: hidden;
     border: 1px solid #E91E63;
 
+    @media(max-width: 1080px) {
+        max-height: 532px;
+    }
+    @media(max-width: 512px) {
+        height: 100vh;
+    }
+
     .background-layer {
         height: 100%;
         background: rgba(61, 61, 61, 0.7);
@@ -75,6 +82,7 @@ main {
             h3 {
                 font-size: 34px;
                 padding-bottom: 15px;
+                padding-top: 20px;
             }
             p {
                 font-size: 17px;
@@ -103,6 +111,29 @@ main {
                     }
                 }
             }
+            @media(max-width: 1080px) {
+                h1 {
+                    font-size: 100px;
+                }
+                h3 {
+                    font-size: 28px;
+                }
+                p {
+                    font-size: 16px;
+                }
+            }
+            @media(max-width: 512px) {
+                grid-template-columns: 1fr;
+                padding: 40px 0;
+                h1 { font-size: 54px; }
+                h3 { font-size: 20px; padding-top: 20px; }
+                .cover-social-icons {
+                    padding-top: 1.1em;
+                    span {
+                        margin: 10px;
+                    }
+                }
+            }
         }
     }
 }
@@ -128,6 +159,13 @@ section {
     background-position: center;
     overflow: hidden;
 
+    @media(max-width: 1080px) {
+        max-height: 532px;
+    }
+    @media(max-width: 512px) {
+        height: 100vh;
+    }
+
     &.whatwedo {
         background-image: url('../public/assets/img/development.jpg');
     }
@@ -137,6 +175,19 @@ section {
     &.about {
         height: 85vh;
         background-image: url('../public/assets/img/developer.jpg');
+
+        @media(max-width: 769px) {
+            height: 100vh;   
+            max-height: 667px; 
+            .grid-container {
+                &.about {
+                    grid-template-columns: 1fr;
+                    grid-gap: 20px;
+                    text-align: center;
+                    padding: 40px;
+                }
+            }
+        }
     }
 
     .grid-container {
@@ -171,7 +222,49 @@ section {
         img {
             &.profile {
                 border-radius: 50%;
+                @media(max-width: 769px) {
+                    width: 70%;
+                }
+                @media(max-width: 512px) {
+                    width: 100%;
+                }
+            }
+        }
+
+        @media(max-width: 1080px) {
+            h1 {
+                font-size: 80px;
+            }
+            h3 {
+                font-size: 26px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+        @media(max-width: 512px) {
+            grid-template-columns: 1fr;
+            padding: 40px 0;
+            h1 { font-size: 44px; }
+            h3 { font-size: 20px; padding-top: 20px; }
+            .cover-social-icons {
+                padding-top: 1.1em;
+                span {
+                    margin: 10px;
+                }
             }
         }
     }
+}
+
+.components {
+    position: relative;
+    height: 100%;
+    margin-top: 15px;
+    background-color: rgb(61, 61, 61);
+    border-radius: 30px;
+    border: 1px solid rgb(233, 30, 99);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
 }

@@ -8,6 +8,7 @@ class Header extends Component {
                 <nav>
                     <ul>
                         <li style={ liStyle }><NavLink to="/"><strong>Home</strong></NavLink></li>
+                        <li style={ liStyle }><NavLink to="/components"><strong>Components</strong></NavLink></li>
                         <li style={ liStyle }><NavLink to="/about"><strong>About me</strong></NavLink></li>
                     </ul>
                 </nav>
